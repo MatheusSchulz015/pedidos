@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { PedidosPage } from '../pages/pedidos/pedidos';
+import { MinhaContaPage } from '../pages/minha-conta/minha-conta';
+import { RedeSociaisPage } from '../pages/rede-sociais/rede-sociais';
+
+
 import { HomePage } from '../pages/home/home';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  @ViewChild(Nav) navCtrl: Nav;
+    rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,5 +28,17 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+  goToHome(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(HomePage);
+  }goToPedidos(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(PedidosPage);
+  }goToMinhaConta(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(MinhaContaPage);
+  }goToRedeSociais(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(RedeSociaisPage);
+  }
 }
-
