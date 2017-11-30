@@ -15,6 +15,7 @@ import { HttpModule } from '@angular/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CardapioPage } from '../pages/cardapio/cardapio';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MinhaContaPage,
     RedeSociaisPage,
     LoginPage,
-    CadastroPage
+    CadastroPage,
+    CardapioPage,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MinhaContaPage,
     RedeSociaisPage,
     LoginPage,
-    CadastroPage
+    CadastroPage,
+    CardapioPage,
   ],
   providers: [
     StatusBar,

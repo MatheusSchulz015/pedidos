@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,LoadingController,AlertController } from 'ionic-angular';
 import { Restaurant } from '../../domain/restaurant/restaurant';
 import { Http } from '@angular/http';
+import { CardapioPage } from '../cardapio/cardapio';
 
 @Component({
   selector: 'page-home',
@@ -41,8 +42,9 @@ export class HomePage {
     });
 }
 
-seleciona(restaurant)
+public select(restaurant)
 {
-  console.log('Entrou na action selecionada');
+  //passando o restaurante selecionado para a pagina de cardapios
+  this.navCtrl.push(CardapioPage,{restaurantSelected:restaurant});
 }
 }

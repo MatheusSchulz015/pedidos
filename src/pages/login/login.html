@@ -9,27 +9,27 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page5">
-  <form id="login-form1">
+  <form id="login-form1" (ngSubmit)="auth()">
     <ion-list id="login-list2">
       <ion-item id="login-input1">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" placeholder=""[(ngModel)]="credentials.email" name="email"></ion-input>
       </ion-item>
       <ion-item id="login-input2">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="password" placeholder=""></ion-input>
+        <ion-input type="password" placeholder="" [(ngModel)]="credentials.password" name="password"></ion-input>
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="login-spacer1"></div>
     <button id="login-button1" ion-button color="stable" block>
       Log in
     </button>
-    <button id="login-button2" ion-button clear color="positive" block href-inappbrowser="/signup">
-      Or create an account
-    </button>
-  </form>
+      </form>
+      <button id="login-button2" ion-button clear color="positive" block (click)="goToRegisterPage()">
+        Ou crie uma nova conta
+      </button>
 </ion-content>
